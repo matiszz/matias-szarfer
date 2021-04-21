@@ -34,8 +34,9 @@ collections:
     output: true
 
 sass:
-  sass_dir: _sass
-  style: compressed
+  sass_dir: _sass/
+  load_paths:
+    - ../node_modules/
 
 defaults:
   - scope:

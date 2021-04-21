@@ -2,15 +2,31 @@
 layout: default
 title: Matias Szarfer
 ---
-<h1>Hey there</h1>
-<h2>I'm Matias</h2>
-<h2>I dont <i>just</i> do websites. I find solutions.</h2>
+<div>
 
-<ul>
-    {% for project in site.projects %}
-    <li>
-        <h2><a href="{{ project.url }}">{{ project.name }}</a></h2>
-        <h3>{{ project.short }}</h3>
-    </li>
-    {% endfor %}
-</ul>
+    <section class="my-32 flex flex-col justify-center">
+        <h1 class="text-center text-6xl py-6 font-bold">Hey there! 👋</h1>
+        <h2 class="text-center text-4xl pt-6">I'm Matias.</h2>
+        <h2 class="text-center text-base pb-6">I'm a software engineer.</h2>
+        <a class="btn btn-primary self-center w-80" href="#projects">Take a look to what I've done</a>
+    </section>
+
+
+    <section id="projects" class="py-4">
+        <div class="grid grid-cols-1 px-3 md:grid-cols-3 gap-8">
+            {% for project in site.projects %}
+            <a href="{{ project.url }}">
+                <div class="card shadow-xl image-full">
+                    <figure>
+                        <img src="https://picsum.photos/id/1005/400/250">
+                    </figure>
+                    <div class="justify-end card-body">
+                        <h2 class="card-title">{{ project.name }}</h2>
+                        <p>{{ project.short }}</p>
+                    </div>
+                </div>
+            </a>
+            {% endfor %}
+        </div>
+    </section>
+</div>

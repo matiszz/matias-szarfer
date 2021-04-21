@@ -1,5 +1,5 @@
 ---
-layout: post
+author: Mati
 title:  "Welcome to Jekyll!"
 date:   2021-04-20 12:36:50 +0200
 categories: jekyll update

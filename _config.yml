@@ -30,20 +30,15 @@ twitter_username: matiasszarfer
 github_username:  matiszz
 
 collections:
-  authors:
+  projects:
     output: true
 
 defaults:
   - scope:
       path: ""
-      type: "authors"
+      type: "projects"
     values:
-      layout: "author"
-  - scope:
-      path: ""
-      type: "posts"
-    values:
-      layout: "post"
+      layout: "project"
   - scope:
       path: ""
     values:

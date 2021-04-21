@@ -2,15 +2,15 @@
 layout: default
 title: Matias Szarfer
 ---
-<h1>{{ "Hello Mati!" | downcase }}</h1>
-
-<h1>Latest Posts</h1>
+<h1>Hey there</h1>
+<h2>I'm Matias</h2>
+<h2>I dont <i>just</i> do websites. I find solutions.</h2>
 
 <ul>
-    {% for post in site.posts %}
+    {% for project in site.projects %}
     <li>
-        <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
-        {{ post.summary }}
+        <h2><a href="{{ project.url }}">{{ project.name }}</a></h2>
+        <h3>{{ project.short }}</h3>
     </li>
     {% endfor %}
 </ul>

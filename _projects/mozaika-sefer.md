@@ -1,5 +1,6 @@
 ---
-name: Sample app
-short: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-tags: 
+name: Sefer page
+short: Website design and development for Sefer, Barcelona's first Jewish books festival in 2020. 
+tags:
+image: /assets/images/mozaika-sefer.png
 ---

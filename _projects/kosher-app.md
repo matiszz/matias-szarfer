@@ -1,7 +1,8 @@
 ---
 name: Kosher App Spain
-short: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.An android/ios app for kosher food
+short: List of Kosher products that you can find in normal supermarkets in Spain.
 tags: react, react-native, ios, android
+image: /assets/images/kosher-app.png
 ---
 
-We did something amazing
+http://www.kosherappspain.online/

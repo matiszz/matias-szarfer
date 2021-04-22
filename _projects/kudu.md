@@ -1,5 +1,6 @@
 ---
-name: Sample app
-short: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+name: Kudu
+short: Kudu helps you organizing your free time by meeting with your beloved ones.
 tags: 
+image: /assets/images/kudu.webp
 ---

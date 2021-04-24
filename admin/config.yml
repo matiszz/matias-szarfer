@@ -1,0 +1,16 @@
+backend:
+  name: git-gateway
+  branch: main # Branch to update (optional; defaults to master)
+media_folder: 'assets/uploads'
+collections:
+  - name: 'projects'
+    label: 'Projects'
+    folder: '_projects/'
+    create: true
+    fields:
+      - { label: 'Layout', name: 'layout', widget: 'hidden', default: 'project' }
+      - { label: 'Name', name: 'name', widget: 'string' }
+      - { label: 'Short description', name: 'short', widget: 'string' }
+      - { label: 'Tags', name: 'tags', widget: 'string' }
+      - { label: 'Image', name: 'image', widget: 'image' }
+      - { label: 'Body', name: 'body', widget: 'markdown' }

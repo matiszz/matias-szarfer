@@ -14,5 +14,5 @@ layout: default
     <figure class="h-96">
         <img src="{{ page.image }}" class="rounded-xl h-96">
     </figure>
-    {{ content }}
+    {{ content | markdownify }}
 </div>

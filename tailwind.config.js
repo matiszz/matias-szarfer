@@ -860,6 +860,5 @@ module.exports = {
         zIndex: ['responsive', 'focus-within', 'focus'],
     },
     plugins: [
-        require('@tailwindcss/custom-forms'),
     ],
 }

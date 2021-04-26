@@ -4,15 +4,56 @@ title: Matias Szarfer
 ---
 <div>
 
+    <header class="z-30 w-full px-2 py-4 sm:px-4">
+        <div class="flex justify-end mx-auto max-w-7xl">
+            <div class="flex justify-self-end space-x-1">
+                <a class="btn btn-primary w-full align-end" href="mailto:matias@szarfer.com" target="_blank">Contact me</a>
+            </div>
+        </div>
+    </header>
+
     <section class="my-32 flex flex-col justify-center text-gray-200">
-        <h1 class="text-center text-6xl py-6 font-bold">Hey there! 👋</h1>
-        <h2 class="text-center text-4xl pt-6">It's Matias.</h2>
-        <h2 class="text-center text-base pb-6">I'm a software engineer.</h2>
-        <a class="btn btn-primary self-center w-80" href="#projects">Take a look to what I've done</a>
+        <h1 class="text-center py-6 font-bold text-6xl">Hey there! 👋</h1>
+        <h2 class="text-center pt-6 text-4xl">It's Matias.</h2>
+        <h2 class="text-center pb-6 text-base">I'm a software engineer. I can do apps, websites and implement technical solutions.</h2>
     </section>
 
+    <section>
+        <section class="px-4 py-24 mx-auto max-w-7xl text-gray-200">
+            <h1 class="mb-12 text-sm font-bold tracking-wide text-center uppercase">I'm proud to have played a part in these amazing journeys.</h1>
+            <div class="grid grid-cols-2 gap-10 text-center lg:grid-cols-8">
+                <div class="flex items-center justify-center">
+                    <img src="/assets/images/logos/upc.png" alt="" class="block object-contain h-12" />
+                </div>
+                <div class="flex items-center justify-center">
+                    <img src="/assets/images/logos/bsc.png" alt="" class="block object-contain h-12" />
+                </div>
+                <div class="flex items-center justify-center">
+                    <img src="/assets/images/logos/jabad.png" alt="" class="block object-contain h-12" />
+                </div>
+                <div class="flex items-center justify-center">
+                    <img src="/assets/images/logos/jbc.png" alt="" class="block object-contain h-12" />
+                </div>
+                <div class="flex items-center justify-center">
+                    <img src="/assets/images/logos/8wires.png" alt="" class="block object-contain h-12" />
+                </div>
+                <div class="flex items-center justify-center">
+                    <img src="/assets/images/logos/mozaika.png" alt="" class="block object-contain h-12" />
+                </div>
+                <div class="flex items-center justify-center">
+                    <img src="/assets/images/logos/milcontratos.png" alt="" class="block object-contain h-12" />
+                </div>
+                <div class="flex items-center justify-center">
+                    <img src="/assets/images/logos/taim.png" alt="" class="block object-contain h-12" />
+                </div>
+            </div>
+        </section>
+
+    </section>
 
     <section id="projects" class="py-8">
+        <h1 class="mb-12 text-sm font-bold tracking-wide text-center uppercase text-gray-200">And I've worked in these incredible projects.</h1>
+
         <div class="grid grid-cols-1 px-3 md:grid-cols-3 gap-8">
             {% for project in site.projects %}
             <a href="{{ project.url }}">

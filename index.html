@@ -32,7 +32,7 @@ title: Matias Szarfer
             </div>
         </header>
 
-        <section class="-mt-16 flex flex-col justify-center text-gray-200 h-screen">
+        <section class="-mt-16 flex flex-col justify-center text-gray-200 h-screen mx-4">
             <h1 class="text-center pt-6 text-5xl">Hello, I'm <span
                     class="text-purple-700">Matias Szarfer</span>.</h1>
             <h1 class="text-center pb-6 text-5xl">I'm a full-stack software engineer.</h1>
@@ -40,13 +40,13 @@ title: Matias Szarfer
     </div>
 
     <section id="projects" class="py-8 text-gray-200">
-        <h2 class="text-center mb-12 pt-6 text-4xl font-bold sticky top-10">Projects</h2>
+        <h2 class="text-center mb-12 pt-6 text-4xl font-bold md:sticky top-10">Projects</h2>
 
-        <div class="mt-28 pb-16">
+        <div class="md:mt-28 pb-16">
             {% for project in site.projects %}
-            <div class="card bg-gray-900 md:card-side text-neutral-content m-5 my-28 sticky top-44">
+            <div class="card bg-gray-900 md:card-side text-neutral-content m-5 my-28 md:sticky top-44">
                 <figure class="p-6">
-                    <img src="{{ project.image }}" class="w-52 h-52">
+                    <img src="{{ project.image }}" class="object-contain w-52 h-52">
                 </figure>
                 <div class="max-w card-body">
                     <h2 class="card-title text-2xl">{{ project.name }}</h2>
@@ -78,7 +78,7 @@ title: Matias Szarfer
         <figure class="p-6 justify-self-center">
             <img src="/favicons/apple-icon-180x180.png">
         </figure>
-        <div class="mx-2 md:mx-40 lg:mx-80 text-left">
+        <div class="mx-4 md:mx-40 lg:mx-80 text-left">
             <p class="my-3">
                 I live in Barcelona, Spain. I work as a freelance software engineer while I finish my Master's Degree in
                 Computer Science. As a freelancer, I've done everything. From bug solving to some cool webs and apps.

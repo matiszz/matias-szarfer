@@ -49,11 +49,24 @@ title: Matias Szarfer
                     <img src="{{ project.image }}" class="w-52 h-52">
                 </figure>
                 <div class="max-w card-body">
-                    <h2 class="card-title">{{ project.name }}</h2>
-                    <p>{{ project.short }}</p>
+                    <h2 class="card-title text-2xl">{{ project.name }}</h2>
+                    <p class="text-sm text-gray-400 mt-1">{{ project.short }}</p>
+                    <p class="text-base">{{ project.description }}</p>
+                    {% if project.view %}
                     <div class="card-actions">
-                        <button class="btn rounded-full">Get Started</button>
+                        <a class="btn rounded-full" href="{{ project.view }}" target="_blank">View</a>
                     </div>
+                    {% endif %}
+                    {% if project.repo %}
+                    <div class="card-actions">
+                        <a class="btn rounded-full" href="{{ project.repo }}" target="_blank">Source</a>
+                    </div>
+                    {% endif %}
+                    {% if project.read %}
+                    <div class="card-actions">
+                        <a class="btn rounded-full" href="{{ project.read }}" target="_blank">Read paper</a>
+                    </div>
+                    {% endif %}
                 </div>
             </div>
             {% endfor %}

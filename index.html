@@ -2,72 +2,126 @@
 layout: default
 title: Matias Szarfer
 ---
-<div>
+<div class="font-mono flex flex-col items-center">
+    <div class="background">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
 
-    <header class="z-30 w-full px-2 py-4 sm:px-4">
-        <div class="flex justify-end mx-auto max-w-7xl">
-            <div class="flex justify-self-end space-x-1">
-                <a class="btn btn-primary w-full align-end" href="mailto:matias@szarfer.com" target="_blank">Contact me</a>
-            </div>
-        </div>
-    </header>
-
-    <section class="my-32 flex flex-col justify-center text-gray-200">
-        <h1 class="text-center py-6 font-bold text-6xl">Hey there! 👋</h1>
-        <h2 class="text-center pt-6 text-4xl">It's Matias.</h2>
-        <h2 class="text-center pb-6 text-base">I'm a software engineer. I can do apps, websites and implement technical solutions.</h2>
-    </section>
-
-    <section>
-        <section class="px-4 py-24 mx-auto max-w-7xl text-gray-200">
-            <h1 class="mb-12 text-sm font-bold tracking-wide text-center uppercase">I'm proud to have played a part in these amazing journeys.</h1>
-            <div class="grid grid-cols-2 gap-10 text-center lg:grid-cols-8">
-                <div class="flex items-center justify-center">
-                    <img src="/assets/images/logos/upc.png" alt="" class="block object-contain h-12" />
-                </div>
-                <div class="flex items-center justify-center">
-                    <img src="/assets/images/logos/bsc.png" alt="" class="block object-contain h-12" />
-                </div>
-                <div class="flex items-center justify-center">
-                    <img src="/assets/images/logos/jabad.png" alt="" class="block object-contain h-12" />
-                </div>
-                <div class="flex items-center justify-center">
-                    <img src="/assets/images/logos/jbc.png" alt="" class="block object-contain h-12" />
-                </div>
-                <div class="flex items-center justify-center">
-                    <img src="/assets/images/logos/8wires.png" alt="" class="block object-contain h-12" />
-                </div>
-                <div class="flex items-center justify-center">
-                    <img src="/assets/images/logos/mozaika.png" alt="" class="block object-contain h-12" />
-                </div>
-                <div class="flex items-center justify-center">
-                    <img src="/assets/images/logos/milcontratos.png" alt="" class="block object-contain h-12" />
-                </div>
-                <div class="flex items-center justify-center">
-                    <img src="/assets/images/logos/taim.png" alt="" class="block object-contain h-12" />
+    <div class="h-screen">
+        <header class="z-30 w-full px-2 py-4 sm:px-4 sticky top-3">
+            <div class="flex justify-end mx-auto max-w-7xl">
+                <div class="flex justify-self-end space-x-1">
+                    <a class="btn btn-primary w-full align-end" href="mailto:matias@szarfer.com"
+                       target="_blank">Contact me</a>
                 </div>
             </div>
+        </header>
+
+        <section class="-mt-16 flex flex-col justify-center text-gray-200 h-screen">
+            <h1 class="text-center pt-6 text-5xl">Hello, I'm <span
+                    class="text-purple-700">Matias Szarfer</span>.</h1>
+            <h1 class="text-center pb-6 text-5xl">I'm a full-stack software engineer.</h1>
         </section>
+    </div>
 
-    </section>
+    <section id="projects" class="py-8 text-gray-200">
+        <h2 class="text-center mb-12 pt-6 text-4xl font-bold sticky top-10">Projects</h2>
 
-    <section id="projects" class="py-8">
-        <h1 class="mb-12 text-sm font-bold tracking-wide text-center uppercase text-gray-200">And I've worked in these incredible projects.</h1>
-
-        <div class="grid grid-cols-1 px-3 md:grid-cols-3 gap-8">
+        <div class="mt-28 pb-16">
             {% for project in site.projects %}
-            <a href="{{ project.url }}">
-                <div class="card shadow-xl image-full">
-                    <figure class="w-96 h-96">
-                        <img src="{{ project.image }}">
-                    </figure>
-                    <div class="justify-end card-body">
-                        <h2 class="card-title">{{ project.name }}</h2>
-                        <p>{{ project.short }}</p>
+            <div class="card bg-gray-900 md:card-side text-neutral-content m-5 my-28 sticky top-44">
+                <figure class="p-6">
+                    <img src="{{ project.image }}" class="w-52 h-52">
+                </figure>
+                <div class="max-w card-body">
+                    <h2 class="card-title text-2xl">{{ project.name }}</h2>
+                    <p class="text-sm text-gray-400 mt-1">{{ project.short }}</p>
+                    <p class="text-base">{{ project.description }}</p>
+                    {% if project.view %}
+                    <div class="card-actions">
+                        <a class="btn rounded-full" href="{{ project.view }}" target="_blank">View</a>
                     </div>
+                    {% endif %}
+                    {% if project.repo %}
+                    <div class="card-actions">
+                        <a class="btn rounded-full" href="{{ project.repo }}" target="_blank">Source</a>
+                    </div>
+                    {% endif %}
+                    {% if project.read %}
+                    <div class="card-actions">
+                        <a class="btn rounded-full" href="{{ project.read }}" target="_blank">Read paper</a>
+                    </div>
+                    {% endif %}
                 </div>
-            </a>
+            </div>
             {% endfor %}
         </div>
+    </section>
+
+    <section class="py-8 text-gray-200 flex flex-col items-center">
+        <h2 class="text-center mb-12 pt-6 text-4xl font-bold">About me</h2>
+        <figure class="p-6 justify-self-center">
+            <img src="/favicons/apple-icon-180x180.png">
+        </figure>
+        <div class="mx-2 md:mx-40 lg:mx-80 text-left">
+            <p class="my-3">
+                I live in Barcelona, Spain. I work as a freelance software engineer while I finish my Master's Degree in
+                Computer Science. As a freelancer, I've done everything. From bug solving to some cool webs and apps.
+                You can check right in the section above!
+            </p>
+            <p class="my-3">
+                I'm also an entrepreneur. I've always thought we need to do something for the world, and creating
+                something to make people's lives easier is my way of giving. I've recently launched Velox.chat, a
+                platform to help remote teams communicating better. I actually did that using Ruby on Rails, a framework
+                I had never used
+                before, just for the pleasure of learning. In fact, I always try to improve my skills and I define
+                myself as a curious person.
+            </p>
+            <p class="my-3">
+                My philosophy when working is being honest. Both for clients or as an employee of a company, I need to
+                believe in what I'm working on. I always try to find the best solutions for problems and implement the
+                most suitable project.
+            </p>
+            <p class="my-3">
+                I'm a full-stack developer, which means I have skills to code both for frontend and backend. My main
+                languages are JS, CSS, and HTML, as well as React, and Ruby On Rails. I'm also used to code in C++ and
+                Python, both for backend and other stuff like Machine Learning, algorithms, etc. Secondary coding skills
+                include C, SQL, Angular, Ionic, Java, C#, and libraries like Bootstrap and Tailwind. For DevOps, I
+                normally do it myself for my own projects. So I'm familiar with platforms like Firebase, AWS, GitHub,
+                Heroku, or Docker. Also, I'm a Linux lover! I normally use Ubuntu, but I've also used Debian and Deepin.
+            </p>
+        </div>
+    </section>
+
+    <section
+            class="justify-self-center pt-16 mt-16 text-gray-200 flex flex-col items-center bg-gray-900 rounded-tl-full rounded-tr-full w-full md:w-2/3">
+        <div class="flex">
+            <a class="btn btn-outline btn-circle btn-lg m-4" href="https://github.com/matiszz/" target="_blank">
+                <img src="assets/images/icons/github.svg" class="w-10 h-10 text-gray-200">
+            </a>
+            <a class="btn btn-outline btn-circle btn-lg m-4" href="https://www.linkedin.com/in/matias-szarfer/"
+               target="_blank">
+                <img src="assets/images/icons/linkedin.svg" class="w-10 h-10">
+            </a>
+            <a class="btn btn-outline btn-circle btn-lg m-4" href="mailto:matias@szarfer.com" target="_blank">
+                <img src="assets/images/icons/email.svg" class="w-10 h-10">
+            </a>
+        </div>
+        <p class="text-sm mb-16">© Matias Szarfer 2021</p>
     </section>
 </div>

@@ -4,9 +4,10 @@
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
+
 @font-face {
-  font-family: 'Roboto Mono';
-  src: local('Roboto Mono'), url(../fonts/RobotoMono.ttf) format('ttf');
+  font-family: "Roboto Mono";
+  src: local("Roboto Mono"), url(../fonts/RobotoMono.ttf) format("ttf");
 }
 
 @keyframes move {

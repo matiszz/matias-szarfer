@@ -12,7 +12,6 @@ collections:
       - { label: 'Name', name: 'name', widget: 'string' }
       - { label: 'Short description', name: 'short', widget: 'string' }
       - { label: 'Description', name: 'description', widget: 'string' }
-      - { label: 'Tags', name: 'tags', widget: 'string' }
       - { label: 'Image', name: 'image', widget: 'image' }
       - { label: 'Web page', name: 'view', widget: 'string', required: false }
       - { label: 'Source code', name: 'repo', widget: 'string', required: false }

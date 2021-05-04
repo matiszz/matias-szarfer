@@ -1,5 +1,6 @@
 ---
 ---
+
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
@@ -11,6 +12,24 @@
 @keyframes move {
   100% {
     transform: translate3d(0, 0, 1px) rotate(360deg);
+  }
+}
+
+.vertical-scroll-snap {
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+  max-height: 90vh;
+}
+
+.stacking-slide {
+  scroll-snap-align: start;
+  height: 20vh;
+  width: 100%;
+  position: sticky;
+  top: 0;
+
+  &:nth-last-child(1) {
+    height: 20vh;
   }
 }
 
@@ -46,6 +65,7 @@
   transform-origin: -20vw 5vh;
   box-shadow: -44vmin 0 6.33812980026438vmin currentColor;
 }
+
 .background span:nth-child(1) {
   color: #583C87;
   top: 88%;
@@ -55,6 +75,7 @@
   transform-origin: 1vw -13vh;
   box-shadow: 44vmin 0 6.076838990397817vmin currentColor;
 }
+
 .background span:nth-child(2) {
   color: #783046;
   top: 38%;
@@ -64,6 +85,7 @@
   transform-origin: -8vw 11vh;
   box-shadow: -44vmin 0 6.138386402794922vmin currentColor;
 }
+
 .background span:nth-child(3) {
   color: #783046;
   top: 92%;
@@ -73,6 +95,7 @@
   transform-origin: -15vw -22vh;
   box-shadow: 44vmin 0 5.507470504190966vmin currentColor;
 }
+
 .background span:nth-child(4) {
   color: #583C87;
   top: 89%;
@@ -82,6 +105,7 @@
   transform-origin: 7vw -11vh;
   box-shadow: -44vmin 0 5.986037558517143vmin currentColor;
 }
+
 .background span:nth-child(5) {
   color: #783046;
   top: 58%;
@@ -91,6 +115,7 @@
   transform-origin: -21vw 8vh;
   box-shadow: -44vmin 0 6.434770615325485vmin currentColor;
 }
+
 .background span:nth-child(6) {
   color: #583C87;
   top: 25%;
@@ -100,6 +125,7 @@
   transform-origin: -23vw 25vh;
   box-shadow: 44vmin 0 6.308333543272389vmin currentColor;
 }
+
 .background span:nth-child(7) {
   color: #783046;
   top: 55%;
@@ -109,6 +135,7 @@
   transform-origin: 16vw -2vh;
   box-shadow: -44vmin 0 5.534294689151857vmin currentColor;
 }
+
 .background span:nth-child(8) {
   color: #783046;
   top: 5%;
@@ -118,6 +145,7 @@
   transform-origin: 18vw 24vh;
   box-shadow: -44vmin 0 5.692199358652369vmin currentColor;
 }
+
 .background span:nth-child(9) {
   color: #583C87;
   top: 44%;
@@ -127,6 +155,7 @@
   transform-origin: 8vw -5vh;
   box-shadow: -44vmin 0 5.608260136973678vmin currentColor;
 }
+
 .background span:nth-child(10) {
   color: #783046;
   top: 61%;
@@ -136,6 +165,7 @@
   transform-origin: -17vw 1vh;
   box-shadow: 44vmin 0 6.169803624991552vmin currentColor;
 }
+
 .background span:nth-child(11) {
   color: #300688;
   top: 90%;
@@ -145,6 +175,7 @@
   transform-origin: 9vw 25vh;
   box-shadow: 44vmin 0 6.120072160837846vmin currentColor;
 }
+
 .background span:nth-child(12) {
   color: #783046;
   top: 56%;
@@ -154,6 +185,7 @@
   transform-origin: 22vw -10vh;
   box-shadow: -44vmin 0 6.2843845424426785vmin currentColor;
 }
+
 .background span:nth-child(13) {
   color: #300688;
   top: 82%;

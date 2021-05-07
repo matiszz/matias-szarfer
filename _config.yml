@@ -22,3 +22,6 @@ plugins:
   - jekyll-sitemap
   - jekyll-seo-tag
   - jekyll-postcss
+  - jekyll-purgecss
+
+css_dir: assets/css

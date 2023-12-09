@@ -1,4 +1,7 @@
+"use client"
+
 import {Card, CardContent, CardDescription, CardHeader} from "@/components/ui/card";
+import {createRef, useEffect, useRef, useState} from "react";
 
 export function Timeline() {
     const items = [
@@ -24,19 +27,19 @@ export function Timeline() {
 
     return (
         <div className="grid grid-cols-1 md:grid-cols-2">
-            <ol className="hidden md:block">
+            <ol className="relative hidden md:block z-10">
                 {items.map((item, index) => (
-                    <TimelineItem item={item} hidden={index % 2 === 1} key={index} leftColumn/>
+                    <TimelineItem index={index} item={item} hidden={index % 2 === 1} key={index} leftColumn/>
                 ))}
             </ol>
-            <ol className="relative border-s border-gray-200 dark:border-gray-700 hidden md:block">
+            <ol className="relative border-s border-gray-200 dark:border-gray-700 hidden md:block z-0">
                 {items.map((item, index) => (
-                    <TimelineItem item={item} hidden={index % 2 === 0} key={index} rightColumn/>
+                    <TimelineItem index={index} item={item} hidden={index % 2 === 0} key={index} rightColumn/>
                 ))}
             </ol>
             <ol className="relative border-s border-gray-200 dark:border-gray-700 md:hidden">
                 {items.map((item, index) => (
-                    <TimelineItem item={item} key={index} rightColumn/>
+                    <TimelineItem index={index} item={item} key={index} rightColumn/>
                 ))}
             </ol>
         </div>
@@ -44,10 +47,12 @@ export function Timeline() {
 }
 
 // @ts-ignore
-export function TimelineItem({item, hidden = false, rightColumn = false, leftColumn = false}) {
-    if (hidden) return <div className={"h-60"}></div>
+export function TimelineItem({item, index, hidden = false, rightColumn = false, leftColumn = false}) {
+    const reference = useRef();
+    const isVisible = useIsVisible(reference);
+
     return (
-        <li className='group mb-10 mx-6'>
+        <li className={`group mb-10 mx-6 flex items-center transition-opacity ease-in delay-300 duration-700 ${isVisible && !hidden ? "opacity-100" : "opacity-0"}`} ref={reference}>
             {rightColumn &&
                 <div
                     className="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white dark:border-gray-900 dark:bg-gray-700 group-hover:bg-gray-500 transition-colors">
@@ -55,7 +60,7 @@ export function TimelineItem({item, hidden = false, rightColumn = false, leftCol
             }
             {leftColumn &&
                 <div
-                    className="relative float-right w-3 h-3 bg-gray-200 rounded-full mt-1.5 -end-8 border border-white dark:border-gray-900 dark:bg-gray-700 group-hover:bg-gray-500 transition-colors">
+                    className="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -end-1.5 border border-white dark:border-gray-900 dark:bg-gray-700 group-hover:bg-gray-500 transition-colors">
                 </div>
             }
             <Card>
@@ -76,4 +81,23 @@ export function TimelineItem({item, hidden = false, rightColumn = false, leftCol
             </Card>
         </li>
     )
+}
+
+// @ts-ignore
+export function useIsVisible(ref) {
+    const [isIntersecting, setIntersecting] = useState(false);
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(([entry]) => {
+                setIntersecting(entry.isIntersecting)
+            }
+        );
+
+        observer.observe(ref.current);
+        return () => {
+            observer.disconnect();
+        };
+    }, [ref]);
+
+    return isIntersecting;
 }

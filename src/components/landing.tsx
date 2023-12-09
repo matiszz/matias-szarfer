@@ -2,6 +2,7 @@ import Link from "next/link"
 import {Button} from "@/components/ui/button"
 import {CardHeader, CardContent, Card} from "@/components/ui/card"
 import Image from "next/image";
+import {Timeline} from "@/components/ui/timeline";
 
 export function Landing() {
     return (
@@ -12,7 +13,7 @@ export function Landing() {
                     <span className="ml-2 text-xl font-bold text-gray-900 dark:text-white">Matias Szarfer</span>
                     <span className="sr-only">Home</span>
                 </Link>
-                <nav className="ml-auto flex gap-4 sm:gap-6">
+                <nav className="ml-auto flex gap-4 sm:gap-6 displ">
                     <Link
                         className="text-sm font-medium hover:underline underline-offset-4 text-gray-700 dark:text-gray-200"
                         href="#"
@@ -46,8 +47,8 @@ export function Landing() {
                     className="w-full py-24 flex flex-col items-center justify-center bg-gradient-to-r from-blue-500 to-purple-500 text-white">
                     <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl">Matias Szarfer</h1>
                     <h2 className="mt-4 text-2xl font-medium">CTO & Co-Founder at <Link href="https://trialing.org"
-                              target="_blank"
-                              className="underline hover:no-underline">Trialing</Link>
+                                                                                        target="_blank"
+                                                                                        className="underline hover:no-underline">Trialing</Link>
                     </h2>
                     <Button
                         className="mt-6 py-2 px-6 text-black bg-white border-white rounded-full hover:bg-gray-700 hover:text-white"
@@ -56,7 +57,9 @@ export function Landing() {
                         Get in touch
                     </Button>
                 </section>
-                <section className="w-full py-12 md:py-24 lg:py-32" id="about">
+                <section
+                    className="w-full grid grid-cols-1 md:grid-cols-2 px-6 md:px-12 lg:px-32 py-12 md:py-24 lg:py-32"
+                    id="about">
                     <div className="container px-4 md:px-6">
                         <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">About Me</h2>
                         <p className="mt-4 max-w-[600px] text-gray-500 md:text-xl/relaxed dark:text-gray-400">
@@ -67,43 +70,24 @@ export function Landing() {
                             for our clients.
                         </p>
                     </div>
-                </section>
-                <section className="w-full py-12 md:py-24 lg:py-32 bg-gray-100 dark:bg-gray-800" id="work">
                     <div className="container px-4 md:px-6">
-                        <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Work</h2>
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
-                            <Card>
-                                <CardHeader>
-                                    <h3 className="text-xl font-bold text-gray-900 dark:text-white">Trialing</h3>
-                                </CardHeader>
-                                <CardContent>
-                                    <p className="text-gray-600 dark:text-gray-400">
-                                        As the CTO and Co-Founder of Trialing, I lead a team of dedicated professionals
-                                        to provide
-                                        comprehensive IT solutions for our clients.
-                                    </p>
-                                </CardContent>
-                            </Card>
-                            <Card>
-                                <CardHeader>
-                                    <h3 className="text-xl font-bold text-gray-900 dark:text-white">Previous Work</h3>
-                                </CardHeader>
-                                <CardContent>
-                                    <p className="text-gray-600 dark:text-gray-400">
-                                        I have a rich history of working with a variety of technology companies,
-                                        bringing innovative
-                                        solutions to the market.
-                                    </p>
-                                </CardContent>
-                            </Card>
-                        </div>
+                        <Image src={"/images/hello.png"} alt={"Matias Szarfer saying hello"} className="w-36 md:w-64"
+                               width={250} height={250}/>
+                    </div>
+                </section>
+                <section className="w-full py-12 md:py-24 lg:py-32 bg-gray-100 dark:bg-gray-800 px-6 md:px-12 lg:px-32"
+                         id="work">
+                    <div className="container px-4 md:px-6">
+                        <h2 className="mb-6 text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Work</h2>
+                        <Timeline/>
                     </div>
                 </section>
                 <section className="w-full py-12 md:py-24 lg:py-32" id="contact">
                     <div className="container px-4 md:px-6">
                         <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Contact</h2>
                         <p className="mt-4 max-w-[600px] text-gray-500 md:text-xl/relaxed dark:text-gray-400">
-                            Feel free to reach out if you&apos;re looking for a collaborator, or just to say hi. My inbox is
+                            Feel free to reach out if you&apos;re looking for a collaborator, or just to say hi. My
+                            inbox is
                             always open.
                         </p>
                         <a href="#" rel="noopener noreferrer" target="_blank">

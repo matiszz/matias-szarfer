@@ -103,7 +103,7 @@ export function Landing() {
                     <div className="container px-4 md:px-6">
                         <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Contact</h2>
                         <p className="mt-4 max-w-[600px] text-gray-500 md:text-xl/relaxed dark:text-gray-400">
-                            Feel free to reach out if you're looking for a collaborator, or just to say hi. My inbox is
+                            Feel free to reach out if you&apos;re looking for a collaborator, or just to say hi. My inbox is
                             always open.
                         </p>
                         <a href="#" rel="noopener noreferrer" target="_blank">
